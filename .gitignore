@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Lava Roll : Git に入れないもの
+# ---------------------------------------------------------------------------
+
+# Visual Studio の作業ファイル
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+*.ipch
+
+# ビルドの出力（exe・pdb・シェーダーの .cso など）
+# ※ *.obj は res/model のモデルと名前がかぶるので、ここでは指定しない（ビルドの .obj は上のフォルダごと除外される）
+project/x64/
+project/Last/
+project/Debug/
+project/Release/
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+*.tlog
+*.log
+*.cso
+
+# パッケージ（NuGet・vcpkg はビルド時に自動で取得される）
+project/packages/
+project/vcpkg_installed/
+
+# 配布物（GitHub の Releases に置く）
+dist/
+
+# 作業用のバックアップ
+_backup/
+_backup_rename/
+*.bak
+
+# ImGui のウィンドウ位置の保存
+imgui.ini
