@@ -30,11 +30,9 @@ cbuffer SkyParam : register(b0)
 VSOutput main(uint id : SV_VertexID)
 {
     VSOutput output = (VSOutput) 0;
-
-    // 0, 1, 2 番の頂点を (-1,-1)・(-1,3)・(3,-1) に置くと、画面（-1〜1）全体をおおう三角形になる
     float2 ndc = float2((id == 2) ? 3.0f : -1.0f, (id == 1) ? 3.0f : -1.0f);
 
-    // 一番奥（深度 1）に置く。深度バッファには書き込まない設定なので、物体は必ず手前に描かれる
+    // 一番奥に置く。深度バッファには書き込まない設定なので、物体は必ず手前に描かれる
     output.Position = float4(ndc, 1.0f, 1.0f);
 
     // 画面の位置を、一番奥の面の上のワールドの位置に戻し、カメラからの方向にする
